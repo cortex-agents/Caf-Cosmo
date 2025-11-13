@@ -1,4 +1,3 @@
-// D:\cortex_agents_projects\cafe-cosmo\src\types\Product.ts
 
 export type Product = {
   id: string;

@@ -22,7 +22,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="text-white text-4xl md:text-6xl font-extrabold drop-shadow-lg"
+          className="text-white text-4xl sm:text-4xl md:text-6xl font-extrabold drop-shadow-lg"
         >
           Welcome to <span className="text-amber-400">Café Cosmo</span>
         </motion.h1>
@@ -30,7 +30,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2 }}
-          className="text-white text-lg md:text-2xl mt-4 mb-6 drop-shadow-md"
+          className="text-white text-lg sm:text-lg md:text-2xl mt-4 mb-6 drop-shadow-md"
         >
           Where every sip feels like home ☕
         </motion.p>
@@ -39,7 +39,7 @@ export default function Hero() {
           href="#menu"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="bg-amber-400 text-black font-semibold px-6 py-3 rounded-full shadow-lg hover:bg-amber-500 transition"
+          className="bg-amber-400 text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:bg-amber-500 transition"
         >
           Explore Menu
         </motion.a>

@@ -26,12 +26,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <Navbar />
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased pt-20`}>
         <SplashProvider>
+          <Navbar />
           {children}
+          <Footer />
         </SplashProvider>
-        <Footer />
       </body>
     </html>
   );

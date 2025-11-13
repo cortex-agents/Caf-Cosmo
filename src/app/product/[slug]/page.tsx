@@ -6,6 +6,7 @@ import Image from 'next/image'
 import { notFound, useRouter } from 'next/navigation'
 import { motion } from 'framer-motion'
 import { Product } from '@/types/Product'
+import toast from 'react-hot-toast';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function ProductDetailPage({ params }: any) {
@@ -28,6 +29,7 @@ export default function ProductDetailPage({ params }: any) {
     }
 
     localStorage.setItem('addToCart', JSON.stringify(cart));
+    toast.success("Item added to cart!");
     router.push('/cart');
   };
 
@@ -37,14 +39,14 @@ export default function ProductDetailPage({ params }: any) {
   };
 
   return (
-    <section className="min-h-screen py-12 px-6 md:px-10 bg-[#fefefe]">
+    <section className="min-h-screen py-12 px-6 md:px-10 bg-gray-50">
       <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
         {/* Product Image */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
-          className="relative w-full h-[400px]"
+          className="relative w-full h-[400px] mb-8"
         >
           <Image
             src={product.image}
@@ -63,22 +65,22 @@ export default function ProductDetailPage({ params }: any) {
         >
           <h2 className="text-3xl font-bold text-gray-800">{product.name}</h2>
           <p className="text-gray-600">{product.description}</p>
-          <p className="text-xl text-amber-600 font-bold">${product.price}</p>
+          <p className="text-xl text-amber-500 font-bold">${product.price}</p>
 
           {/* Quantity Selector */}
           <div className="flex items-center gap-4">
-            <span className="font-semibold text-gray-700">Quantity:</span>
+            <span className="font-bold text-gray-800">Quantity:</span>
             <div className="flex items-center border border-gray-300 rounded overflow-hidden">
               <button
                 onClick={() => setQuantity((prev) => Math.max(1, prev - 1))}
-                className="px-3 py-1 bg-gray-100 hover:bg-gray-200"
+                className="px-3 py-1 bg-amber-100 hover:bg-amber-200 text-amber-800 cursor-pointer"
               >
                 –
               </button>
               <span className="px-4 font-medium">{quantity}</span>
               <button
                 onClick={() => setQuantity((prev) => prev + 1)}
-                className="px-3 py-1 bg-gray-100 hover:bg-gray-200"
+                className="px-3 py-1 bg-amber-100 hover:bg-amber-200 text-amber-800 cursor-pointer"
               >
                 +
               </button>
@@ -89,13 +91,13 @@ export default function ProductDetailPage({ params }: any) {
           <div className="flex gap-4 mt-4">
             <button
               onClick={handleAddToCart}
-              className="bg-amber-500 hover:bg-amber-600 text-white py-2 px-6 rounded font-semibold transition"
+              className="bg-amber-500 hover:bg-amber-600 text-white py-2 px-6 rounded font-semibold transition cursor-pointer"
             >
               Add to Cart
             </button>
             <button
               onClick={handleBuyNow}
-              className="bg-black hover:bg-gray-900 text-white py-2 px-6 rounded font-semibold transition"
+              className="bg-gray-200 hover:bg-gray-300 text-gray-800 py-2 px-6 rounded font-semibold transition cursor-pointer"
             >
               Buy Now
             </button>
