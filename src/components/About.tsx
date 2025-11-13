@@ -115,7 +115,7 @@ export default function About() {
       >
         <h3 className="text-3xl font-bold mb-5 text-amber-600">Meet the Cosmo Crew</h3>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-          {team.map((member, i) => (
+          {team.map((member) => (
             <motion.div
               key={member.name}
               whileHover={{ y: -7, boxShadow: "0 4px 24px rgba(245,158,11,0.12)" }}

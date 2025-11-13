@@ -1,5 +1,6 @@
 'use client'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import { useState } from 'react'
 import { FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa"
 
@@ -61,7 +62,7 @@ export default function Contact() {
             </div>
             {/* Map block (Replace src with your map image or Google Map iframe) */}
             <div className="mt-7 rounded-xl overflow-hidden shadow-lg">
-              <img src="/map-karachi.jpg" alt="Cafe location map" className="object-cover w-full h-[180px]" />
+              <Image src="/map-karachi.jpg" alt="Cafe location map" width={500} height={180} className="object-cover w-full h-[180px]" />
               <span className="absolute bottom-2 left-2 bg-white/80 text-amber-500 font-bold text-sm px-3 py-1 rounded shadow">
                 Find us on Google Maps
               </span>

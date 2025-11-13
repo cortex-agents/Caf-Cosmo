@@ -22,49 +22,51 @@ export default function Footer() {
       <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-10 items-start relative z-10">
         {/* Logo & Brand */}
         <div className="flex flex-col items-center md:items-start gap-2">
-          <div className="relative flex items-center justify-center w-20 h-20 mb-4">
-            <div className="relative rounded-full bg-transparent border-4 border-gray-700 shadow-lg flex items-center justify-center w-16 h-16 z-10">
-              <Image src="/logo.png" alt="Cosmo Logo" width={40} height={40} className="object-contain rounded-full" priority />
-            </div>
-          </div>
+         
           <div className="flex items-center gap-2">
-            <span className="font-extrabold text-amber-400 text-xl mb-0">Café Cosmo</span>
-            <Link href="https://cortexagents.org" target="_blank" rel="noopener noreferrer" className="text-sm text-white hover:text-amber-400 transition">
+            <span className="font-extrabold text-amber-500 text-xl mb-0">Café Cosmo</span>
+           
+          </div>
+          <span className="text-sm text-gray-500 max-w-[180px]">Feel the vibe. Taste the world.</span>
+          <div className="relative flex items-center justify-center  h-20 my-4">
+            <Link href="https://cortexagents.org" target="_blank" rel="noopener noreferrer" className="relative  flex items-center gap-1 justify-center  h-16 z-10">
+              <Image src="/logo.png" alt="Cosmo Logo" width={40} height={40} className="object-contain rounded-full" priority />
+              <span className="text-sm text-bold font-medium text-gray-500 hover:text-amber-500 transition cursor-pointer">
               Created by Cortex Agents
+            </span>
             </Link>
           </div>
-          <span className="text-sm text-gray-400 max-w-[180px]">Feel the vibe. Taste the world.</span>
         </div>
 
         {/* Navigation */}
         <nav className="flex flex-col items-center gap-2">
-          <span className="uppercase text-amber-400 font-bold mb-2 tracking-wide">Quick Links</span>
+          <span className="uppercase text-amber-500 font-bold mb-2 tracking-wide">Quick Links</span>
           {navs.map(nav => (
             <Link
               key={nav.name}
               href={nav.href}
-              className="group text-gray-300 hover:text-amber-400 font-medium text-base transition focus:outline-none"
+              className="group text-gray-400 hover:text-amber-500 font-medium text-base transition focus:outline-none"
             >
-              <span className="group-hover:underline decoration-amber-400 underline-offset-4">{nav.name}</span>
+              <span className="group-hover:underline decoration-amber-500 underline-offset-4">{nav.name}</span>
             </Link>
           ))}
         </nav>
 
         {/* Contact Info */}
         <div className="flex flex-col items-center gap-2 md:items-start mt-4 md:mt-0">
-          <span className="uppercase text-amber-400 font-bold mb-2 tracking-wide">Contact</span>
-          <span className="flex items-center gap-2 text-gray-300 text-base">
-            <FaEnvelope className="text-amber-400" /> hello@cafecosmo.com
+          <span className="uppercase text-amber-500 font-bold mb-2 tracking-wide">Contact</span>
+          <span className="flex items-center gap-2 text-gray-400 text-base">
+            <FaEnvelope className="text-amber-500" /> hello@cafecosmo.com
           </span>
-          <span className="flex items-center gap-2 text-gray-300 text-base">
+          <span className="flex items-center gap-2 text-gray-400 text-base">
             📞 +92 300 1234567
           </span>
-          <span className="text-gray-300 text-base">123 Coffee Lane, Karachi</span>
+          <span className="text-gray-400 text-base">123 Coffee Lane, Karachi</span>
         </div>
 
         {/* Newsletter & Social */}
         <div className="flex flex-col items-center gap-3 md:items-end">
-          <span className="uppercase text-amber-400 font-bold mb-2 tracking-wide">Get Connected</span>
+          <span className="uppercase text-amber-500 font-bold mb-2 tracking-wide">Get Connected</span>
           <form className="flex gap-2 mb-2">
             <input
               type="email"
